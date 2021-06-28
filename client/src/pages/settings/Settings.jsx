@@ -11,7 +11,8 @@ export default function Setting() {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [success, setSuccess] = useState(false);
-    const PF = "http://localhost:5000/images/"
+    const PORT = process.env.PORT || 5000;
+    const PF = "http://localhost:" + PORT + "/images/"
 
     const handleSubmit = async (e) => {
         e.preventDefault();

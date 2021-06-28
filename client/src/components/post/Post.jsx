@@ -2,7 +2,8 @@ import "./post.css"
 import {Link} from "react-router-dom"
 
 export default function Post({post}) {
-    const PF = "http://localhost:5000/images/"
+    const PORT = process.env.PORT || 5000;
+    const PF = "http://localhost:" + PORT + "/images/"
     return (
         <div className="post">
             {post.photo && (

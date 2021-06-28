@@ -3,11 +3,14 @@ import { useEffect, useState } from "react"
 import "./sidebar.css"
 import {Link} from "react-router-dom"
 
+const PORT = process.env.PORT || 5000;
+
 export default function Sidebar() {
     const [cats, setCats] = useState([])
     useEffect(()=>{
         const getCats = async()=> {
-            const res = await axios.get("/categories")
+            const res = await axios.get("http://localhost:" + PORT + "/api/categories")
+            console.log(res);
             setCats(res.data)
         };
         getCats();

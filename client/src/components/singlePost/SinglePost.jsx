@@ -9,7 +9,8 @@ export default function SinglePost() {
     const location = useLocation();
     const path = location.pathname.split("/")[2];
     const [post, setPost] = useState({});
-    const PF = "http://localhost:5000/images/";
+    const PORT = process.env.PORT || 5000;
+    const PF = "http://localhost:" + PORT + "/images/";
     const { user } = useContext(Context);
     const [title, setTitle] = useState("")
     const [desc, setDesc] = useState("")
